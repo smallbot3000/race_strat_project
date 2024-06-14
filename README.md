@@ -8,5 +8,9 @@ A program that can formulate a race strategy based on the car, track, length of 
    - The track being use determines the legth of time a pitstop takes, whick can ne added to the time of the stop itself.
    - If there is limits on the sitint applicible, the number of laps in a given time or time for a number of laps can be calculated.
    - Determining if there are additional classes in the race, we can determine if the amout of laps will change for out user depending on the speed of the other classes.
-2.      
+2. Reesult creation
+   - If the race has a class faster than the player, then the amout will need to be found and then enterend in before the main loop can be exicuted.
+   - The loop will be limited by the amouit f laps that can be done.
+   - the laps are then simulated, allowing foir the consumible items to ware out and, if applicallbe, the stint to end befre a pit stop is made and the needed items are found.
+4. Result printting: Prits the result f the code when the buttoon is hit 
 
