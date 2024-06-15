@@ -4,6 +4,12 @@
 import tkinter as tk
 from tkinter import ttk
 
+def lap_to_time(lap_number, lap_time):  # Time in seconds
+    return lap_time * lap_number
+
+def time_to_lap(race_time,lap_time):  # Time in seconds
+    return race_time / lap_time
+
 def print_strategy():
     # Example strategy printing logic
     print(f"Car: {car_var.get()}, Race Type: {race_type_var.get()}, "
