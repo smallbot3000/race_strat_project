@@ -1,7 +1,13 @@
 # race_strat_project
 A program that can formulate a race strategy based on the car, track, length of the race, etc.
 
-##Program Flow
+## Code Formatting Standards
+1. Vars that are multiple wrds long will have underscores, and lwercase words thrughtout.
+2. Cmments will be at the end of a line whenever possible.
+3. Comments at the end of lines will be two spaces froom,m the lline
+4. if there are lines ajacent that comntain comments on the same code snippet, theey must be aligbned when possible.
+
+## Program Flow
 1. Data Entry: User enters the **game/simulator being used**, **car being used**, **track being used**, if the race will be **time or lap based**, and if the race is **multiclass**.
    - The game/simulator being used will determine if the  Car, track, and classes beig used are in the game/simulator, as well as the stint limit options if they exist. Additionaly, the time that each action in a pit stop takes. 
    - The car being used by the player as well as the track being used will give he user will determine the **class** that the player is in, the number of **fuel maps** that can be used,and the **lap times** that the program can worth with, based on the track given.
