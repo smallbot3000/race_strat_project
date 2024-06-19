@@ -1,43 +1,30 @@
 # race_strat_project Main File
-# Read README before commiting
+# Read README before committing
 
-import tkinter as tk
-from tkinter import ttk
+# Char Vars
+lap_or_time = ""
+multiclass_y_n = ""
 
-def lap_to_time(lap_number, lap_time):  # Time in seconds
-    return lap_time * lap_number
+# Int Vars
+race_pace = 0.0
+fuel_per_lap = 0.0
+num_of_laps = 0
+race_time = 0.0
 
-def time_to_lap(race_time,lap_time):  # Time in seconds
-    return race_time / lap_time
+while True:
+    lap_or_time = input("Is the race determined by laps or by time? (Enter 'laps' or 'time'): ")
+    if lap_or_time == "laps" or lap_or_time == "time":
+        break
 
-def print_strategy():
-    # Example strategy printing logic
-    print(f"Car: {car_var.get()}, Race Type: {race_type_var.get()}, "
-          f"Laps/Time: {laps_time_var.get()}, Other Cars: {other_cars_var.get()}")
+if lap_or_time == "laps":
+    num_of_laps = int(input("Enter the number of laps: "))
+elif lap_or_time == "time":
+    race_time = (float(input("Enter the race time in MIN: ")))  # entering minutes shuld allows ease of input
 
-root = tk.Tk()                         # Create the main window
-root.title("Race Strategy Generator")  # Set the window title
+race_pace = float(input("Enter your race pace in seconds: "))
+fuel_per_lap = float(input("Enter your fuel per lap: "))
 
-car_var = tk.StringVar(root)               # Car selection dropdown variable
-car_options = ["Car A", "Car B", "Car C"]  # Car options
-car_dropdown = ttk.Combobox(root, textvariable=car_var, values=car_options, state="readonly")
-car_dropdown.grid(column=0, row=0)
-
-race_type_var = tk.StringVar(root)               # Race type selection
-race_types = [("Lap", "lap"), ("Time", "time")]  # Race type options
-race_type_dropdown = ttk.OptionMenu(root, race_type_var, *race_types)
-race_type_dropdown.grid(column=1, row=0)
-
-laps_time_var = tk.StringVar(root)  # Input for laps or time
-laps_time_entry = ttk.Entry(root, textvariable=laps_time_var)
-laps_time_entry.grid(column=0, row=1)
-
-other_cars_var = tk.StringVar(root)  # Multiclass race selection
-other_cars_options = ["Car D", "Car E", "Car F"]
-other_cars_dropdown = ttk.Combobox(root, textvariable=other_cars_var, values=other_cars_options, state="readonly")
-other_cars_dropdown.grid(column=1, row=1)
-
-strategy_button = ttk.Button(root, text="Print Strategy", command=print_strategy)  # Print strategy button
-strategy_button.grid(columnspan=2, row=2)
-
-root.mainloop()  # Run the application
+if lap_or_time == "laps":
+    print("The race will be " + str((race_pace * num_of_laps) / 60) + " minutes long, and need " + str(fuel_per_lap * num_of_laps) + " gallons of fuel.")
+elif lap_or_time == "time":
+    print("The race will be " + str((race_time / race_pace) * 60) + " laps long, and need " + str(fuel_per_lap * (race_time / race_pace)) + " gallons of fuel.")
